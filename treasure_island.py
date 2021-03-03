@@ -31,6 +31,8 @@ choice_1 = input("Type 'left' or 'right'\n").lower()
 if choice_1 == "left":
     print("You arrive at a large lake with an island in the middle. You can see a boat making its way to the shore where you stand. Do you wait for the boat or swim to the island?")
     choice_2 = input("Type 'swim' or 'wait'\n").lower()
+
+    # Third decision point
     if choice_2 == "wait":
         print("The woman sailing the boat offers to take you across to the island, warning you about the mermaids in the water. When you arrive, you wander around the island until you find an old stone building with three doors. Each door has been painted a different color. Which door will you enter?")
         choice_3 = input("Type 'red', 'yellow', or 'blue'\n").lower()
@@ -46,5 +48,3 @@ if choice_1 == "left":
         print("You encounter a group of mermaids who ask you to stay with them. When you learn that they can make you a mermaid, too, you agree and abandon your search for the treasure. Game Over.")
 else:
     print("You wander through the jungle for days before you are rescued, and never find the treasure. Game over.")
-
-    # Third decision point
