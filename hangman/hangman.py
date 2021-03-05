@@ -11,9 +11,6 @@ print(hangman_art.logo)
 # Randomly choose a word from the word_list
 chosen_word = random.choice(hangman_words.word_list)
 
-# Testing code
-print(f'Pssst, the solution is {chosen_word}.')
-
 # For each letter in the chosen_word, add a "_" to 'display'.
 display = []
 for letter in chosen_word:
@@ -27,8 +24,11 @@ while not end_of_game:
     print(f'\33c')
     # Let the user know if they've already guessed a letter
     while guess in guesses:
+        print(" ".join(display))
         print(f"You've already guessed {guess}")
-        guess = input("Guess a letter: ")
+        print(hangman_art.stages[lives])
+        guess = input("Guess a letter: ").lower()
+        print(f'\33c')
     guesses.append(guess)
 
     # Loop through each position in the chosen_word;
@@ -48,7 +48,7 @@ while not end_of_game:
     # Condition to end the game when lives go down to 0
     if lives == 0:
         end_of_game = True
-        print("Sorry. You lost.")
+        print(f"Sorry. You lost. The word was {chosen_word}")
 
     # Condition to end the game when the entire word has been guessed
     if "_" not in display:
